@@ -1,0 +1,147 @@
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Text Input</div>
+<div class="guideCont">
+<div class="gText">
+    - 한 줄 텍스트를 입력할 때 사용됩니다. (Large/Medium/Small 3가지 사이즈, Default/Focused/Completed/Error/Disabled/View 상태, 비밀번호 아이콘 클릭시 표시·숨김 전환)
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<div class="cptForm">
+
+    <!-- 텍스트 인풋 : Size = Large, State = Default (비밀번호, 아이콘 클릭시 표시/숨김) -->
+    <div class="iptText -large">
+        <label for="inputLarge1">레이블</label>
+        <p class="hint" id="inputLarge1Hint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <input type="password" id="inputLarge1" aria-describedby="inputLarge1Hint" placeholder="내용을 입력하세요">
+            <span class="ico"></span>
+        </div>
+        <p class="msg -info"><span class="ico"></span>메시지를 입력해 주세요</p>
+    </div>
+
+    <br>
+
+    <!-- 텍스트 인풋 : Size = Large, State = Focused -->
+    <div class="iptText -large -focused">
+        <label for="inputLargeFocus">레이블</label>
+        <p class="hint" id="inputLargeFocusHint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <input type="text" id="inputLargeFocus" aria-describedby="inputLargeFocusHint" placeholder="내용을 입력하세요">
+            <span class="ico"></span>
+        </div>
+        <p class="msg -info"><span class="ico"></span>메시지를 입력해 주세요</p>
+    </div>
+
+    <br>
+
+    <!-- 텍스트 인풋 : Size = Large, State = Completed -->
+    <div class="iptText -large -completed">
+        <label for="inputLargeCompleted">레이블</label>
+        <p class="hint" id="inputLargeCompletedHint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <input type="text" id="inputLargeCompleted" aria-describedby="inputLargeCompletedHint" value="입력한 내용입니다.">
+            <span class="ico"></span>
+        </div>
+        <p class="msg -success"><span class="ico"></span>메시지를 입력해 주세요</p>
+    </div>
+
+    <br>
+
+    <!-- 텍스트 인풋 : Size = Large, State = Error -->
+    <div class="iptText -large -error">
+        <label for="inputLarge2">레이블</label>
+        <p class="hint" id="inputLarge2Hint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <input type="text" id="inputLarge2" aria-describedby="inputLarge2Hint" aria-invalid="true" placeholder="내용을 입력하세요">
+            <span class="ico"></span>
+        </div>
+        <p class="msg -error"><span class="ico"></span>메시지를 입력해 주세요</p>
+    </div>
+
+    <br>
+
+    <!-- 텍스트 인풋 : Size = Large, State = Disabled -->
+    <div class="iptText -large -disabled">
+        <label for="inputLarge3">레이블</label>
+        <p class="hint" id="inputLarge3Hint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <input type="text" id="inputLarge3" aria-describedby="inputLarge3Hint" placeholder="내용을 입력하세요" disabled>
+            <span class="ico"></span>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- 텍스트 인풋 : Size = Large, State = View (읽기 전용으로 값만 보여줄 때) -->
+    <div class="iptText -large -view">
+        <label for="inputLarge4">레이블</label>
+        <p class="hint" id="inputLarge4Hint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <input type="text" id="inputLarge4" aria-describedby="inputLarge4Hint" value="입력한 내용입니다." readonly>
+            <span class="ico"></span>
+        </div>
+    </div>
+
+    <br><br>
+
+    <!-- 텍스트 인풋 : Size = Medium -->
+    <div class="iptText -medium">
+        <label for="inputMedium1">레이블</label>
+        <div class="box">
+            <input type="text" id="inputMedium1" placeholder="내용을 입력하세요">
+            <span class="ico"></span>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- 텍스트 인풋 : Size = Small -->
+    <div class="iptText -small">
+        <label for="inputSmall1">레이블</label>
+        <div class="box">
+            <input type="text" id="inputSmall1" placeholder="내용을 입력하세요">
+            <span class="ico"></span>
+        </div>
+    </div>
+
+</div>
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+
+</div>
+</div>
+
+
+<script>
+    run();
+</script>
+

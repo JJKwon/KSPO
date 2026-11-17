@@ -1,0 +1,119 @@
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Tooltip</div>
+<div class="guideCont">
+<div class="gText">
+    - 버튼을 누르면 툴팁이 열립니다. 다른 곳을 클릭하거나 닫기 버튼을 누르면 닫힙니다. (bottom/top 방향, left/center/right 화살표 정렬 조합)
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<!-- 툴팁 : Direction = bottom, Arrow = center (버튼 기준 중앙 정렬) -->
+<div class="comTooltip -bottom -center">
+    <button class="btn tertiary medium" type="button" data-tooltip-trigger>도움말</button>
+    <div class="tooltipPanel">
+        <span class="tooltipArrow"><img src="../../images/common/ico_tooltip_arrow.svg" alt=""></span>
+        <div class="tooltipCon">
+            <p class="tooltipText">툴팁은 150자 내외의 텍스트만 제공되어야 합니다. 내부에 닫기 버튼을 포함한 대화형 요소를 사용하지 않습니다.</p>
+            <button type="button" class="tooltipClose" data-tooltip-close></button>
+        </div>
+    </div>
+</div>
+
+<!-- 툴팁 : Direction = bottom, Arrow = left -->
+<div class="comTooltip -bottom -left">
+    <button class="btn tertiary medium" type="button" data-tooltip-trigger>도움말</button>
+    <div class="tooltipPanel">
+        <span class="tooltipArrow"><img src="../../images/common/ico_tooltip_arrow.svg" alt=""></span>
+        <div class="tooltipCon">
+            <p class="tooltipText">툴팁은 150자 내외의 텍스트만 제공되어야 합니다. 내부에 닫기 버튼을 포함한 대화형 요소를 사용하지 않습니다.</p>
+            <button type="button" class="tooltipClose" data-tooltip-close></button>
+        </div>
+    </div>
+</div>
+
+<!-- 툴팁 : Direction = bottom, Arrow = right -->
+<div class="comTooltip -bottom -right">
+    <button class="btn tertiary medium" type="button" data-tooltip-trigger>도움말</button>
+    <div class="tooltipPanel">
+        <span class="tooltipArrow"><img src="../../images/common/ico_tooltip_arrow.svg" alt=""></span>
+        <div class="tooltipCon">
+            <p class="tooltipText">툴팁은 150자 내외의 텍스트만 제공되어야 합니다. 내부에 닫기 버튼을 포함한 대화형 요소를 사용하지 않습니다.</p>
+            <button type="button" class="tooltipClose" data-tooltip-close></button>
+        </div>
+    </div>
+</div>
+
+<!-- 툴팁 : Direction = top, Arrow = center -->
+<div class="comTooltip -top -center">
+    <button class="btn tertiary medium" type="button" data-tooltip-trigger>도움말</button>
+    <div class="tooltipPanel">
+        <span class="tooltipArrow"><img src="../../images/common/ico_tooltip_arrow.svg" alt=""></span>
+        <div class="tooltipCon">
+            <p class="tooltipText">툴팁은 150자 내외의 텍스트만 제공되어야 합니다. 내부에 닫기 버튼을 포함한 대화형 요소를 사용하지 않습니다.</p>
+            <button type="button" class="tooltipClose" data-tooltip-close></button>
+        </div>
+    </div>
+</div>
+
+<!-- 툴팁 : Direction = top, Arrow = left -->
+<div class="comTooltip -top -left">
+    <button class="btn tertiary medium" type="button" data-tooltip-trigger>도움말</button>
+    <div class="tooltipPanel">
+        <span class="tooltipArrow"><img src="../../images/common/ico_tooltip_arrow.svg" alt=""></span>
+        <div class="tooltipCon">
+            <p class="tooltipText">툴팁은 150자 내외의 텍스트만 제공되어야 합니다. 내부에 닫기 버튼을 포함한 대화형 요소를 사용하지 않습니다.</p>
+            <button type="button" class="tooltipClose" data-tooltip-close></button>
+        </div>
+    </div>
+</div>
+
+<!-- 툴팁 : Direction = top, Arrow = right -->
+<div class="comTooltip -top -right">
+    <button class="btn tertiary medium" type="button" data-tooltip-trigger>도움말</button>
+    <div class="tooltipPanel">
+        <span class="tooltipArrow"><img src="../../images/common/ico_tooltip_arrow.svg" alt=""></span>
+        <div class="tooltipCon">
+            <p class="tooltipText">툴팁은 150자 내외의 텍스트만 제공되어야 합니다. 내부에 닫기 버튼을 포함한 대화형 요소를 사용하지 않습니다.</p>
+            <button type="button" class="tooltipClose" data-tooltip-close></button>
+        </div>
+    </div>
+</div>
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+
+</div>
+</div>
+
+
+<script>
+    run();
+</script>
+

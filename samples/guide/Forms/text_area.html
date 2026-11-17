@@ -1,0 +1,144 @@
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Text Area</div>
+<div class="guideCont">
+<div class="gText">
+    - 여러 줄 텍스트를 입력할 때 사용됩니다. (Large, Default/Focused/Completed/Error/Disabled/View 상태, Medium/Small 사이즈, 글자수 카운터 자동 갱신)
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<div class="cptForm">
+
+    <!-- 텍스트 영역 : State = Default -->
+    <div class="iptTextarea -large">
+        <label for="textareaLarge1">레이블</label>
+        <p class="hint" id="textareaLarge1Hint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <textarea id="textareaLarge1" aria-describedby="textareaLarge1Hint" placeholder="내용을 입력하세요" maxlength="100"><!--/textarea-->
+        </div>
+        <p class="counter"><strong>0</strong>/100</p>
+    </div>
+
+    <br>
+
+    <!-- 텍스트 영역 : State = Focused -->
+    <div class="iptTextarea -large -focused">
+        <label for="textareaLargeFocus">레이블</label>
+        <p class="hint" id="textareaLargeFocusHint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <textarea id="textareaLargeFocus" aria-describedby="textareaLargeFocusHint" placeholder="내용을 입력하세요" maxlength="100"><!--/textarea-->
+        </div>
+        <p class="msg -info"><span class="ico"></span>메시지를 입력해 주세요</p>
+        <p class="counter"><strong>0</strong>/100</p>
+    </div>
+
+    <br>
+
+    <!-- 텍스트 영역 : State = Completed -->
+    <div class="iptTextarea -large -completed">
+        <label for="textareaLargeCompleted">레이블</label>
+        <p class="hint" id="textareaLargeCompletedHint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <textarea id="textareaLargeCompleted" aria-describedby="textareaLargeCompletedHint" maxlength="100">입력한 내용입니다.<!--/textarea-->
+        </div>
+        <p class="msg -success"><span class="ico"></span>메시지를 입력해 주세요</p>
+        <p class="counter"><strong>8</strong>/100</p>
+    </div>
+
+    <br>
+
+    <!-- 텍스트 영역 : State = Error -->
+    <div class="iptTextarea -large -error">
+        <label for="textareaLargeError">레이블</label>
+        <p class="hint" id="textareaLargeErrorHint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <textarea id="textareaLargeError" aria-describedby="textareaLargeErrorHint" aria-invalid="true" placeholder="내용을 입력하세요" maxlength="100"><!--/textarea-->
+        </div>
+        <p class="msg -error"><span class="ico"></span>메시지를 입력해 주세요</p>
+        <p class="counter"><strong>0</strong>/100</p>
+    </div>
+
+    <br>
+
+    <!-- 텍스트 영역 : State = Disabled -->
+    <div class="iptTextarea -large -disabled">
+        <label for="textareaLargeDisabled">레이블</label>
+        <p class="hint" id="textareaLargeDisabledHint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <textarea id="textareaLargeDisabled" aria-describedby="textareaLargeDisabledHint" placeholder="내용을 입력하세요" maxlength="100" disabled><!--/textarea-->
+        </div>
+        <p class="counter"><strong>0</strong>/100</p>
+    </div>
+
+    <br>
+
+    <!-- 텍스트 영역 : State = View (읽기 전용으로 값만 보여줄 때) -->
+    <div class="iptTextarea -large -view">
+        <label for="textareaLargeView">레이블</label>
+        <p class="hint" id="textareaLargeViewHint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <textarea id="textareaLargeView" aria-describedby="textareaLargeViewHint" maxlength="100" readonly>입력한 내용입니다.<!--/textarea-->
+        </div>
+    </div>
+
+    <br><br>
+
+    <!-- 텍스트 영역 : Size = Medium / Small (글자 크기만 다름, 박스 높이는 100px로 동일) -->
+    <div class="iptTextarea -medium">
+        <label for="textareaMedium1">레이블</label>
+        <div class="box">
+            <textarea id="textareaMedium1" placeholder="내용을 입력하세요" maxlength="100"><!--/textarea-->
+        </div>
+        <p class="counter"><strong>0</strong>/100</p>
+    </div>
+
+    <br>
+
+    <div class="iptTextarea -small">
+        <label for="textareaSmall1">레이블</label>
+        <div class="box">
+            <textarea id="textareaSmall1" placeholder="내용을 입력하세요" maxlength="100"><!--/textarea-->
+        </div>
+        <p class="counter"><strong>0</strong>/100</p>
+    </div>
+
+</div>
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+
+</div>
+</div>
+
+
+<script>
+    run();
+</script>
+

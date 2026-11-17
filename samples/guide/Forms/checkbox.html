@@ -1,0 +1,147 @@
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Checkbox</div>
+<div class="guideCont">
+<div class="gText">
+    - 여러 옵션 중 하나 이상을 선택할 때 사용됩니다. (Large/Medium 2가지 사이즈, Default/Selected/Indeterminate/Disabled 및 각 상태의 Disabled 조합)
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<div class="cptForm">
+
+    <!-- 체크박스 : Size = Large -->
+    <div class="iptChk -large">
+        <label>
+            <input type="checkbox" id="checkLarge1" aria-describedby="checkLarge1Help">
+            <span class="checkMark"></span>
+            <span class="checkLabel">체크박스</span>
+        </label>
+        <p class="checkHelp" id="checkLarge1Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptChk -large">
+        <label>
+            <input type="checkbox" id="checkLarge2" aria-describedby="checkLarge2Help" checked>
+            <span class="checkMark"></span>
+            <span class="checkLabel">체크박스</span>
+        </label>
+        <p class="checkHelp" id="checkLarge2Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptChk -large">
+        <label>
+            <!-- data-indeterminate : 페이지 로드시 자동으로 부분선택(-) 상태로 설정됨 (common.js) -->
+            <input type="checkbox" id="checkLarge3" aria-describedby="checkLarge3Help" data-indeterminate>
+            <span class="checkMark"></span>
+            <span class="checkLabel">체크박스</span>
+        </label>
+        <p class="checkHelp" id="checkLarge3Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptChk -large">
+        <label>
+            <input type="checkbox" id="checkLarge4" aria-describedby="checkLarge4Help" disabled>
+            <span class="checkMark"></span>
+            <span class="checkLabel">체크박스</span>
+        </label>
+        <p class="checkHelp" id="checkLarge4Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptChk -large">
+        <label>
+            <input type="checkbox" id="checkLarge5" aria-describedby="checkLarge5Help" checked disabled>
+            <span class="checkMark"></span>
+            <span class="checkLabel">체크박스</span>
+        </label>
+        <p class="checkHelp" id="checkLarge5Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptChk -large">
+        <label>
+            <!-- data-indeterminate + disabled : 부분선택 + 비활성 동시 상태 -->
+            <input type="checkbox" id="checkLarge6" aria-describedby="checkLarge6Help" data-indeterminate disabled>
+            <span class="checkMark"></span>
+            <span class="checkLabel">체크박스</span>
+        </label>
+        <p class="checkHelp" id="checkLarge6Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+
+    <br><br>
+
+    <!-- 체크박스 : Size = Medium -->
+    <div class="iptChk -medium">
+        <label>
+            <input type="checkbox" id="checkMedium1" aria-describedby="checkMedium1Help">
+            <span class="checkMark"></span>
+            <span class="checkLabel">체크박스</span>
+        </label>
+        <p class="checkHelp" id="checkMedium1Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptChk -medium">
+        <label>
+            <input type="checkbox" id="checkMedium2" aria-describedby="checkMedium2Help" checked>
+            <span class="checkMark"></span>
+            <span class="checkLabel">체크박스</span>
+        </label>
+        <p class="checkHelp" id="checkMedium2Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptChk -medium">
+        <label>
+            <input type="checkbox" id="checkMedium3" aria-describedby="checkMedium3Help" disabled>
+            <span class="checkMark"></span>
+            <span class="checkLabel">체크박스</span>
+        </label>
+        <p class="checkHelp" id="checkMedium3Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptChk -medium">
+        <label>
+            <input type="checkbox" id="checkMedium4" aria-describedby="checkMedium4Help" checked disabled>
+            <span class="checkMark"></span>
+            <span class="checkLabel">체크박스</span>
+        </label>
+        <p class="checkHelp" id="checkMedium4Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptChk -medium">
+        <label>
+            <input type="checkbox" id="checkMedium5" aria-describedby="checkMedium5Help" data-indeterminate disabled>
+            <span class="checkMark"></span>
+            <span class="checkLabel">체크박스</span>
+        </label>
+        <p class="checkHelp" id="checkMedium5Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+
+</div>
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+
+</div>
+</div>
+
+
+<script>
+    run();
+</script>
+

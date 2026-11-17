@@ -1,0 +1,117 @@
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Text Button</div>
+<div class="guideCont">
+<div class="gText">
+    - 아이콘 유무를 자유롭게 조합하는 텍스트형 버튼입니다. (Large/Medium/Small 3가지 사이즈, Default/Visited/Disabled 3가지 상태)
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<!-- 텍스트 버튼 : Size = Large, State = Default -->
+<div class="comTextButton -large">
+    <a href="#">
+        <span class="ico -download"></span>
+        버튼
+        <span class="ico -newWindow"></span>
+    </a>
+</div>
+
+<!-- 텍스트 버튼 : Size = Medium, State = Default -->
+<div class="comTextButton -medium">
+    <a href="#">
+        <span class="ico -download"></span>
+        버튼
+        <span class="ico -newWindow"></span>
+    </a>
+</div>
+
+<!-- 텍스트 버튼 : Size = Small, State = Default -->
+<div class="comTextButton -small">
+    <a href="#">
+        <span class="ico -download"></span>
+        버튼
+        <span class="ico -newWindow"></span>
+    </a>
+</div>
+
+<br>
+
+<!-- 텍스트 버튼 : State = Visited (방문/확인함, 아이콘 색은 텍스트와 함께 currentColor로 자동 반영) -->
+<div class="comTextButton -large -visited">
+    <a href="#">
+        <span class="ico -download"></span>
+        버튼
+        <span class="ico -newWindow"></span>
+    </a>
+</div>
+
+<!-- 텍스트 버튼 : State = Disabled (비활성, 클릭 불가) -->
+<div class="comTextButton -large -disabled">
+    <a href="#">
+        <span class="ico -download"></span>
+        버튼
+        <span class="ico -newWindow"></span>
+    </a>
+</div>
+
+<br>
+
+<!-- 텍스트 버튼 : 아이콘 없음 (span.ico를 생략) -->
+<div class="comTextButton -large">
+    <a href="#">버튼</a>
+</div>
+
+<!-- 텍스트 버튼 : 왼쪽 아이콘만 -->
+<div class="comTextButton -large">
+    <a href="#">
+        <span class="ico -download"></span>
+        버튼
+    </a>
+</div>
+
+<!-- 텍스트 버튼 : 오른쪽 아이콘만 -->
+<div class="comTextButton -large">
+    <a href="#">
+        버튼
+        <span class="ico -newWindow"></span>
+    </a>
+</div>
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+
+</div>
+</div>
+
+
+<script>
+    run();
+</script>
+

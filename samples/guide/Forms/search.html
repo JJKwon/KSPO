@@ -1,0 +1,107 @@
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Search</div>
+<div class="guideCont">
+<div class="gText">
+    - 검색어를 입력할 때 사용됩니다. (Large/Medium 2가지 사이즈, Default/Focused/Completed/Error 상태)
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<div class="cptForm">
+
+    <!-- 검색 : Size = Large, State = Default -->
+    <div class="iptSearch -large">
+        <label for="searchLarge1">레이블</label>
+        <div class="box">
+            <input type="text" id="searchLarge1" placeholder="내용을 입력하세요">
+            <span class="ico"></span>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- 검색 : Size = Large, State = Focused -->
+    <div class="iptSearch -large -focused">
+        <label for="searchLargeFocus">레이블</label>
+        <div class="box">
+            <input type="text" id="searchLargeFocus" placeholder="내용을 입력하세요">
+            <span class="ico"></span>
+        </div>
+        <p class="msg -info"><span class="ico"></span>메시지를 입력해 주세요</p>
+    </div>
+
+    <br>
+
+    <!-- 검색 : Size = Large, State = Completed -->
+    <div class="iptSearch -large -completed">
+        <label for="searchLargeCompleted">레이블</label>
+        <div class="box">
+            <input type="text" id="searchLargeCompleted" value="검색어" placeholder="내용을 입력하세요">
+            <span class="ico"></span>
+        </div>
+        <p class="msg -success"><span class="ico"></span>메시지를 입력해 주세요</p>
+    </div>
+
+    <br>
+
+    <!-- 검색 : Size = Large, State = Error -->
+    <div class="iptSearch -large -error">
+        <label for="searchLargeError">레이블</label>
+        <div class="box">
+            <input type="text" id="searchLargeError" aria-invalid="true" placeholder="내용을 입력하세요">
+            <span class="ico"></span>
+        </div>
+        <p class="msg -error"><span class="ico"></span>메시지를 입력해 주세요</p>
+    </div>
+
+    <br><br>
+
+    <!-- 검색 : Size = Medium -->
+    <div class="iptSearch -medium">
+        <label for="searchMedium1">레이블</label>
+        <div class="box">
+            <input type="text" id="searchMedium1" placeholder="내용을 입력하세요">
+            <span class="ico"></span>
+        </div>
+    </div>
+
+</div>
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+
+</div>
+</div>
+
+
+<script>
+    run();
+</script>
+

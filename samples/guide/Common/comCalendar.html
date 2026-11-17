@@ -1,0 +1,102 @@
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Calendar</div>
+<div class="guideCont">
+<div class="gText">
+    - common/js/tui-date-picker.js(TOAST UI DatePicker)로 실제 달력을 그리고, 그 위에 디자인 가이드에 맞는 헤더/스킨을 입힌 컴포넌트입니다.<br>
+    - 기본 제공 헤더(제목 + 이전/다음)는 감추고, 연도·월을 각각 따로 고를 수 있는 드롭다운 헤더를 직접 얹었습니다. 라이브러리 안의 영문 문구(Prev/Next month·year 등)도 common/js/tui-date-picker.js 안에서 한글로 바꿔 두었습니다.<br>
+    - 날짜 인풋을 포커스하거나 클릭하면 그 아래로 달력이 펼쳐집니다. 날짜를 클릭해 선택한 뒤 "확인"을 누르면 그 값이 인풋에 채워지고 달력이 닫힙니다. "취소"는 값을 바꾸지 않고 달력만 닫습니다.
+</div>
+
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<!-- 날짜 인풋 + 팝오버 달력 : data-cal-field(전체 묶음) 안에 날짜 인풋(.iptDate, data-cal-input)과
+     .comCalendar가 함께 있다. 인풋을 포커스/클릭하면 그 아래로 달력이 펼쳐지고(common.js),
+     "확인"을 누르면 선택된 날짜가 인풋에 채워지며 닫히고, "취소"는 값을 바꾸지 않고 닫히기만 한다. -->
+<div class="calField" data-cal-field>
+
+    <div class="iptDate -large">
+        <label for="calInput1">날짜 선택</label>
+        <div class="box">
+            <input type="text" id="calInput1" placeholder="YYYY-MM-DD" readonly data-cal-input data-cal-open>
+            <span class="ico" data-cal-open></span>
+        </div>
+    </div>
+
+    <!-- 본문(달력)은 data-cal-init이 붙어 있어야 common.js가 tui.DatePicker 인스턴스를 만든다 -->
+    <div class="comCalendar" data-cal-init>
+        <div class="calHead">
+            <button type="button" class="calNavBtn -prev" aria-label="이전 달" data-cal-prev><span class="ico"></span></button>
+            <div class="calTitle">
+                <div class="calSelect" data-cal-select="year">
+                    <button type="button" class="calSelectBtn" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="txt">2026년</span><span class="ico"></span>
+                    </button>
+                    <!-- 목록(연도)은 common.js가 초기화 시 자동으로 채운다 -->
+                    <ul class="calSelectList" role="listbox"></ul>
+                </div>
+                <div class="calSelect" data-cal-select="month">
+                    <button type="button" class="calSelectBtn" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="txt">1월</span><span class="ico"></span>
+                    </button>
+                    <!-- 목록(1~12월)도 common.js가 초기화 시 자동으로 채운다 -->
+                    <ul class="calSelectList" role="listbox"></ul>
+                </div>
+            </div>
+            <button type="button" class="calNavBtn -next" aria-label="다음 달" data-cal-next><span class="ico"></span></button>
+        </div>
+
+        <!-- tui.DatePicker가 실제로 그리는 자리 -->
+        <div class="calBody" data-cal-body></div>
+
+        <div class="calFoot">
+            <button type="button" class="calTodayBtn" data-cal-today><span class="dot"></span><span class="txt">오늘</span></button>
+            <div class="calBtnSet">
+                <button type="button" class="btn tertiary medium" data-cal-cancel>취소</button>
+                <button type="button" class="btn primary medium" data-cal-confirm>확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+</div>
+</div>
+
+
+<script>
+    run();
+
+    // guide.html이 이 페이지를 jQuery.load()로 나중에 끼워 넣기 때문에(common.js는 그 전에 이미 실행이
+    // 끝난 상태) common.js의 자동 초기화 루프가 이 안의 .comCalendar를 못 잡는다. run()과 같은 방식으로
+    // 여기서 직접 한 번 더 불러서 실제 tui.DatePicker 인스턴스를 만든다.
+    document.querySelectorAll('.cptPubGuide [data-cal-init]').forEach(window.initComCalendar);
+</script>

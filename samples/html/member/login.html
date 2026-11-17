@@ -1,0 +1,193 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" >
+	<meta name="format-detection" content="telephone=no">
+	<meta name="description" content="국민체육진흥공단 기금평가시스템">
+	<meta name="keywords" content="국민체육진흥공단, 기금평가, 기금평가시스템, KSPO">
+	<meta name="author" content="국민체육진흥공단">
+	<meta property="og:title" content="KSPO 기금관리시스템 로그인">
+	<meta property="og:description" content="국민체육진흥공단 기금평가시스템">
+	<meta property="og:image" content="../../images/common/logo_header.svg">
+	<meta property="og:url" content="">
+	<!-- 캐싱방지 -->
+	<!-- <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT"> -->
+	<!-- 모바일 상단,타이틀바,주소창 색변경(안드로이드에서 크롬,파폭,오페라,삼성브라우저만 가능) -->
+	<!-- <meta name="theme-color" content="#4285f4"> -->
+
+	<title>KSPO 기금관리시스템 로그인</title>
+
+	<link rel="stylesheet" href="../../common/css/swiper.css" />
+	<link rel="stylesheet" href="../../common/css/style.css" />
+	<!-- @퍼블(2026-09-15 추가) : locals.extraHead로 페이지별 전용 <head> 내용(웹폰트 등)을 선택적으로 추가할 수 있다 -
+	     다른 페이지의 <head>에는 영향 없다. 사용례 : applicant/material/detail02.html, applicant/survey/detail02.html
+	     (개인정보동의 "(주관) 성명" 실시간 서명 미리보기용 손글씨 웹폰트 Gaegu 로드 - 20261026 Nanum Brush Script로 잠시 교체했다가 다시 Gaegu로 확정). -->
+	
+
+	<script src="../../common/js/swiper.js" defer></script>
+	<script src="../../common/js/common.js" defer></script>
+</head>
+<body>
+<div class="skip"><a class="quickBtn" href="#container">본문바로가기</a></div>
+<div class="wrap">
+
+<!-- @퍼블 : 로그인 페이지는 공통 GNB 헤더/푸터 없이 좌우 분할 전체화면으로 별도 제작한다 (좌: 로고+일러스트+간이푸터 / 우: 로그인 폼) -->
+<div class="cptMemberAuth">
+    <!-- 회원 인증 화면(로그인/아이디 찾기/비밀번호 찾기/새 비밀번호 입력) 공통 좌측 영역 : 로고 + 일러스트 + 간이 푸터. 화면마다 완전히 동일해서 partial로 분리했다. -->
+<div class="loginLeft">
+    <header class="loginBrand">
+        <div class="loginLogo">
+            <!-- <img src="../../images/common/logo_login_mark.svg" alt="KSPO">
+            <img src="../../images/common/logo_login_wordmark.svg" alt="기금평가관리"> -->
+            <img src="../../images/common/login_logo.svg" alt="기금평가관리">
+        </div>
+        <div class="loginIllust">
+            <img src="../../images/contents/login_bg.png" alt="">
+        </div>
+    </header>
+
+    <footer class="loginFooter">
+        <div class="loginFooterTop">
+            <img src="../../images/common/logo_footer.svg" alt="국민체육진흥공단">
+            <div class="loginAddress">
+                <p>05540 서울시 송파구 올림픽로 424 올림픽회관</p>
+                <p>TEL : 02-410-1114</p>
+                <p>FAX : 02-410-1219</p>
+            </div>
+        </div>
+        <div class="loginFooterBottom">
+            <div class="loginPolicy">
+                <a href="#" class="-strong">개인정보처리방침</a>
+                <a href="#">홈페이지저작권정책</a>
+                <a href="#">전화번호안내</a>
+                <a href="#">위치안내</a>
+            </div>
+            <p class="loginCopy">COPYRIGHT © 2026 국민체육진흥공단. ALL RIGHT RESERVED.</p>
+        </div>
+    </footer>
+</div>
+
+
+    <main class="loginRight" id="container">
+        <div class="loginContents">
+            <div class="loginTitle">
+                <p class="loginSub">KSPO 기금관리시스템 로그인</p>
+                <h1 class="loginMain">이용자 구분을 선택해주세요.</h1>
+            </div>
+
+            <div class="loginInput">
+                <!-- data-login-tab : 클릭한 쪽에 on 클래스 토글 (common.js) -->
+                <div class="modTab -fill">
+                    <ul>
+                        <li class="on"><a href="#" data-login-tab="agency">보조사업자</a></li>
+                        <li><a href="#" data-login-tab="evaluator">평가위원</a></li>
+                    </ul>
+                </div>
+
+                <!-- @퍼블 : 아이디/비밀번호를 둘 다 입력하기 전까지 "로그인" 버튼은 disabled이고, 둘 다 값이 채워지면
+                     활성화된다(common.js .loginForm input 이벤트 참고). -->
+                <!-- @개발 : 유효성 검사(validation) 실패 시 에러 표시 방법 (Figma node-id=2692-42553)
+                     1) 에러가 발생한 .iptText에 `-error` 클래스를 추가한다 (box 테두리가 2px 빨간색으로 바뀌고, 아래 .msg -error 문구가 노출된다)
+                     2) .msg -error 안의 텍스트를 실제 에러 상황에 맞는 문구로 교체한다
+                     3) 값을 다시 입력하면 -error 클래스를 제거해서 원래 상태로 되돌린다 -->
+                <div class="cptForm loginForm">
+                    <form>
+                        <div class="iptText -large">
+                            <label for="loginId">아이디</label>
+                            <div class="box">
+                                <input type="text" id="loginId" name="loginId" placeholder="아이디를 입력하세요" autocomplete="username">
+                            </div>
+                            <p class="msg -error"><span class="ico"></span>아이디를 입력해 주세요.</p>
+                        </div>
+                        <div class="iptText -large">
+                            <label for="loginPw">비밀번호</label>
+                            <div class="box">
+                                <input type="password" id="loginPw" name="loginPw" placeholder="비밀번호를 입력하세요" autocomplete="current-password">
+                            </div>
+                            <p class="msg -error"><span class="ico"></span>비밀번호를 입력해 주세요.</p>
+                        </div>
+                        <div class="iptChk -medium">
+                            <label>
+                                <input type="checkbox" id="loginSave">
+                                <span class="checkMark"></span>
+                                <span class="checkLabel">아이디 저장</span>
+                            </label>
+                        </div>
+                        <!-- (2026-10-08 사용자 지시) 로그인 버튼 클릭 시 아래 모달(#modalLoginNotice) 열림 - 아이디·비밀번호 입력 전에는
+                             기존대로 disabled라 눌리지 않는다. 폼 제출은 common.js에서 막는다([data-modal-open] + type=submit). -->
+                        <button class="btn primary large" type="submit" disabled data-modal-open="modalLoginNotice" title="로그인, 사용자 선택알림 - 새창띄움">로그인</button><!-- (2026-10-21 웹접근성 예비점검 3.2.1 반영, 사용자 지시) title="로그인" - 실제 로그인은 화면 전환이라 "새창" 안내는 넣지 않음 -->
+                        <!-- 2026.11.11 종료감리 지적사항 수정 : 로그인 버튼 title "로그인" → "로그인, 사용자 선택알림 - 새창띄움" (누르면 사용자 선택 알림 모달(modalLoginNotice)이 뜨는 것을 안내) -->
+                        <div class="loginLinks">
+                            <div class="comTextButton -small"><a href="findId.html">아이디 찾기</a></div>
+                            <span class="divider"></span>
+                            <div class="comTextButton -small"><a href="findPw.html">비밀번호 찾기</a></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- 접었다 폈다(아코디언) 인포박스 : [data-toggle-infobox] 클릭 시 open 토글, .infoBody는 hidden 속성으로 표시/숨김 (common.js) -->
+            <!-- (2026-10-08 사용자 지시, 시험 적용) -upward : 아래가 아니라 위로 펼쳐지도록 변경 - 아래로 펼치면 가운데 정렬된 화면 전체가
+                 위로 밀려 올라가는 문제 때문. 펼친 내용이 박스 위에 겹쳐 뜨고 주변 레이아웃은 움직이지 않는다(_comInfoBox.scss). -->
+            <div class="comInfoBox -primary -default -collapsible -upward" id="loginHelpBox">
+                <button type="button" class="infoHead" data-toggle-infobox aria-expanded="false" aria-controls="loginHelpBoxBody">
+                    <span class="infoIcon"></span>
+                    <span class="infoTitle">로그인에 어려움이 있으신가요?</span>
+                    <span class="infoToggle"></span>
+                </button>
+                <div class="infoBody" id="loginHelpBoxBody" hidden>
+                    <!-- (2026-10-08 사용자 지시) 펼친 내용 문구를 Figma node-id 3015-78768 기준으로 갱신 - 소제목 문구 변경, 이메일·전화는 디자인 값 그대로,
+                         맨 아래 최초 로그인 안내문(.infoText, 17px Regular) 추가. 항목 간 12px · 목록 줄 간 4px · 좌측 들여쓰기 28px은 기존 값과 실측 동일.
+                         (디자인은 아래로 펼쳐지는 모습이지만 펼침 방향은 위로 바꾼 시험 적용(-upward)을 그대로 유지 - 사용자 지시) -->
+                    <p class="infoSubTitle">로그인 계정 관련 사항은 아래 연락처로 문의 주시기 바랍니다.</p>
+                    <div class="infoDivider"></div>
+                    <div class="comTextList -dot -medium">
+                        <ul>
+                            <li><span class="ico"></span>이메일: 024064@kspo.or.kr</li>
+                            <li><span class="ico"></span>전화: 02-410-1283</li>
+                        </ul>
+                    </div>
+                    <p class="infoText">최초 로그인 하는 경우 본인 이메일에서 비밀번호 설정 후 로그인할 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- 로그인 모달 : (2026-10-08 사용자 지시) applicant/business/detail_reject.html의 반려 사유 모달(#modalRejectReason, Figma node-id 2956-48495 -
+     Medium 사이즈, 취소/확인 2버튼)을 구조·문구 그대로 복사해 옮겨 심었다(id만 로그인용으로 변경). 로그인 버튼 클릭 시 열린다.
+     @개발 : 제목(.modalTitle)·본문(.modalText)은 원본 문구 그대로라 로그인 상황에 맞는 실제 문구로 교체가 필요하다. -->
+<div class="modModal -medium" id="modalLoginNotice">
+    <div class="modalDim" data-modal-close></div>
+    <div class="modalPanel" role="dialog" aria-modal="true" aria-label="안내">
+        <div class="modalHead">
+            <button type="button" class="modalClose" data-modal-close aria-label="닫기"></button>
+        </div>
+        <div class="modalBodyWrap" data-modal-scroll-wrap>
+            <div class="modalBody">
+                <p class="modalText">
+                    사업평가 진행을 위한 평가 가능 일정, 평가분야, 평가지역 등의 정보를 나의정보관리 메뉴에서 작성해 주시기 바랍니다.
+                </p>
+                <p class="modalDesc">
+                    ※ 원활한 평가 진행을 위해 미리 작성해 주시기 바랍니다.
+                </p>
+            </div>
+        </div>
+        <div class="modalFoot">
+            <div class="modalButtons">
+                <button class="btn tertiary medium" type="button" data-modal-close>확인</button>
+                <button class="btn primary medium" type="button" data-modal-close>나의정보관리 바로가기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bottom -->
+
+</div>
+</body>
+</html>

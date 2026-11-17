@@ -1,0 +1,193 @@
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">File Upload</div>
+<div class="guideCont">
+<div class="gText">
+    - 파일을 첨부할 때 사용됩니다. 파일선택을 누르면 업로드 중(스피너) 표시 후 목록에 추가되고, 삭제 버튼으로 낱개 삭제하거나 전체 파일 삭제 버튼으로 한번에 지울 수 있습니다.
+</div>
+<div class="gGroup">
+<div class="gText">Type = 기본형</div>
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<div class="cptForm">
+
+    <!-- 파일 업로드 (기본형) -->
+    <div class="formUpload">
+        <div class="uploadTitle">
+            <strong>타이틀영역</strong>
+            <p>컨텐츠 영역</p>
+        </div>
+
+        <div class="uploadGroup">
+            <div class="uploadHead">
+                <strong id="uploadTitle1">파일첨부</strong>
+                <button class="btn tertiary medium" type="button" data-upload-clear-all aria-describedby="uploadTitle1">전체 파일 삭제<span class="ico"></span></button>
+            </div>
+
+            <!-- 첨부 안내문구 (20261022 감리대응 - 추가, Figma node-id 2974-68412) : "파일첨부" 바로 아래 점 목록 2줄. 파일선택 버튼에 aria-describedby="uploadInfo1"로 연결한다. -->
+            <div class="comTextList -dot -small uploadInfo" id="uploadInfo1">
+                <ul>
+                    <li><span class="ico"></span>첨부파일은 이미지, 문서 유형의 파일을 등록할 수 있습니다.</li>
+                    <li><span class="ico"></span>파일 1개 당 크기는 10MB를 초과할 수 없습니다.</li>
+                </ul>
+            </div>
+
+            <ul class="uploadList" data-upload-list>
+                <!-- 업로드 진행중 : 파일선택 직후 common.js가 이 상태로 추가했다가, 완료되면 자동으로 삭제 가능한 상태로 바뀐다 -->
+                <li class="uploadItem">
+                    <p class="fileName">파일명은 최대 1줄이 노출됩니다. 텍스트가 그 이상일 경우 말줄임표를 사용합니다. [주민등록법 시행령 : 별... [hwp, 17KB]</p>
+                    <span class="uploadSpinner"></span>
+                </li>
+
+                <!-- 업로드 완료(확인용, 삭제 불가) -->
+                <li class="uploadItem">
+                    <p class="fileName">위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB]</p>
+                    <span class="uploadComplete"></span>
+                </li>
+
+                <!-- 오류 : 용량 초과 등 -->
+                <li class="uploadItem -error">
+                    <div class="row">
+                        <p class="fileName">위임장(주민등록법 시행령 별지 제15호의2호서식) [hwp, 17KB]</p>
+                        <div class="actions">
+                            <button type="button" class="-remove">삭제<span class="ico"></span></button>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <!-- (20261022 감리대응 - 사용자 지시) 용량 기준 20MB → 10MB : 첨부 안내문구(파일 1개 당 10MB 초과 불가, Figma node-id 2974-68412)를 기준으로 통일 -->
+                    <p class="msg"><span class="ico"></span>등록 가능한 파일 용량을 초과하였습니다. 10MB 이하의 파일만 등록할 수 있습니다.</p>
+                </li>
+
+                <!-- 업로드 완료(삭제 가능) -->
+                <li class="uploadItem">
+                    <p class="fileName">전입신고서 [주민등록법 시행령 : 별지서식 15, 15호의2호] [hwp, 17KB]</p>
+                    <div class="actions">
+                        <button type="button" class="-remove">삭제<span class="ico"></span></button>
+                    </div>
+                </li>
+
+                <!-- 기존 첨부(다운로드/바로보기 가능) -->
+                <li class="uploadItem">
+                    <p class="fileName">전입재등록신고서 (주민등록법 시행령 : 별지서식 15, 15호의2호) [hwp, 17KB]</p>
+                    <div class="actions">
+                        <button type="button" class="-download">다운로드<span class="ico"></span></button>
+                        <button type="button" class="-view">바로보기<span class="ico"></span></button>
+                    </div>
+                </li>
+
+                <!-- 파일선택 CTA : 목록 맨 끝에서 계속 파일을 더 담을 수 있도록 안내 -->
+                <li class="uploadItem -find">
+                    <button type="button" class="uploadFindBtn" data-upload-trigger aria-describedby="uploadInfo1"><span class="ico"></span>파일선택</button>
+                </li>
+            </ul>
+            <input type="file" multiple hidden data-upload-input title="파일 첨부" aria-label="파일 첨부">
+        </div>
+    </div>
+
+</div>
+
+</textarea>
+</div>
+</div>
+
+<div class="gGroup">
+<div class="gText">Type = 슬롯형 (파일첨부(제출파일 정해져 있을 때) - 첨부파일1, 첨부파일2 ... 슬롯이 늘어서는 레이아웃, 슬롯에 파일을 담으면 마지막 슬롯일 때 다음 빈 슬롯이 자동으로 추가됨)</div>
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<div class="cptForm">
+
+    <!-- 파일 업로드 (슬롯형) : 슬롯 하나에 파일을 담으면(change 이벤트) 그 슬롯이 마지막 슬롯일 때 다음 번호의 빈 슬롯을 자동으로 추가한다 (common.js) -->
+    <div class="formUpload">
+        <div class="uploadTitle">
+            <strong>파일첨부(제출파일 정해져 있을 때)</strong>
+        </div>
+        <div class="uploadNotice"><span class="ico"></span><span>메시지를 입력해주세요.</span></div>
+
+        <div class="uploadSlots" data-upload-slots>
+            <div class="uploadSlot" data-upload-slot>
+                <p class="slotLabel">첨부파일1 - 첨부 후</p>
+                <ul class="uploadList" data-upload-list>
+                    <li class="uploadItem">
+                        <p class="fileName">파일명을 입력해주세요. [확장자명,파일용량]</p>
+                        <div class="actions">
+                            <button type="button" class="-remove">삭제<span class="ico"></span></button>
+                        </div>
+                    </li>
+                </ul>
+                <input type="file" hidden data-upload-input title="파일 첨부" aria-label="파일 첨부">
+            </div>
+
+            <div class="uploadSlot" data-upload-slot>
+                <p class="slotLabel">첨부파일2</p>
+                <ul class="uploadList" data-upload-list>
+                    <li class="uploadItem -find">
+                        <button type="button" class="uploadFindBtn" data-upload-trigger><span class="ico"></span>파일선택</button>
+                    </li>
+                </ul>
+                <input type="file" hidden data-upload-input title="파일 첨부" aria-label="파일 첨부">
+            </div>
+
+            <div class="uploadSlot" data-upload-slot>
+                <p class="slotLabel">첨부파일3</p>
+                <ul class="uploadList" data-upload-list>
+                    <li class="uploadItem -find">
+                        <button type="button" class="uploadFindBtn" data-upload-trigger><span class="ico"></span>파일선택</button>
+                    </li>
+                </ul>
+                <input type="file" hidden data-upload-input title="파일 첨부" aria-label="파일 첨부">
+            </div>
+
+            <div class="uploadSlot" data-upload-slot>
+                <p class="slotLabel">첨부파일4</p>
+                <ul class="uploadList" data-upload-list>
+                    <li class="uploadItem -find">
+                        <button type="button" class="uploadFindBtn" data-upload-trigger><span class="ico"></span>파일선택</button>
+                    </li>
+                </ul>
+                <input type="file" hidden data-upload-input title="파일 첨부" aria-label="파일 첨부">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</textarea>
+</div>
+</div>
+
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+
+</div>
+</div>
+
+
+<script>
+    run();
+</script>

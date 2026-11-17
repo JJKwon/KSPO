@@ -1,0 +1,66 @@
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Paging</div>
+<div class="guideCont">
+<div class="gText">
+    - Grid, 각종 게시판 하단에서 사용됩니다.
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<!-- 페이징 -->
+<div class="comPaging">
+    <ul>
+        <!-- 2026.11.11 종료감리 지적사항 수정 : 처음/이전/다음/끝 링크에 title 없음 → title 추가(처음페이지로 이동 / 이전페이지로 이동 / 다음페이지로 이동 / 마지막페이지로 이동) -->
+        <li class="first"><a href="#" title="처음페이지로 이동"><span class="ico"></span><span class="txt">처음</span></a></li>
+        <li class="prev disabled"><a href="#" aria-disabled="true" tabindex="-1" title="이전페이지로 이동"><span class="ico"></span><span class="txt">이전</span></a></li>
+        <li class="on"><a href="#" aria-current="page" title="1페이지(현재 페이지)">1</a></li>
+        <li><a href="#" title="2페이지로 이동">2</a></li>
+        <li><a href="#" title="3페이지로 이동">3</a></li>
+        <li class="-pcOnly"><a href="#" title="4페이지로 이동">4</a></li>
+        <li class="-pcOnly"><a href="#" title="5페이지로 이동">5</a></li>
+        <li class="ellipsis" aria-hidden="true"><span class="ico"></span></li>
+        <li><a href="#" title="99페이지로 이동">99</a></li>
+        <li class="next"><a href="#" title="다음페이지로 이동"><span class="txt">다음</span><span class="ico"></span></a></li>
+        <li class="last"><a href="#" title="마지막페이지로 이동"><span class="txt">끝</span><span class="ico"></span></a></li>
+    </ul>
+</div>
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+    
+</div>
+</div>
+
+    
+<script>
+    run();
+</script>
+    
+        

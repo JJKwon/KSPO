@@ -1,0 +1,81 @@
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">In-Page Navigation</div>
+<div class="guideCont">
+<div class="gText">
+    - 콘텐츠가 긴 페이지에서 현재 위치를 안내하고 원하는 섹션으로 바로 이동할 수 있도록 돕는 페이지 내 탐색 목록입니다.<br>
+    - Mobile(767px 이하)에서는 좌측 고정폭 목록 대신 select형 드롭다운으로 바뀝니다(Figma node-id 2909-46363/46365 실측).
+    &lt;ul&gt;은 그대로 두고 select 트리거(.navSelect)만 추가한 뒤, 클릭 시 &lt;ul&gt;이 드롭다운 패널로 펼쳐지는 방식입니다.<br>
+    - 항목들이 실제로는 각각 다른 화면으로 이동하는 링크(&lt;a href&gt;)라서, listbox/option이 아니라 disclosure(펼침) +
+    aria-current 조합으로 접근성을 맞췄습니다 - 기존 [data-toggle-infobox]/[data-menu-trigger]와 동일한 패턴입니다.
+    트리거는 aria-expanded로 펼침 상태를, 현재 페이지에 해당하는 링크는 aria-current="page"로 표시합니다.
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<!-- 콘텐츠 내 탐색 -->
+<div class="comInPageNav">
+    <div class="navTitle">
+        <span>이 페이지의 구성</span>
+        <strong>페이지 제목</strong>
+    </div>
+
+    <!-- Mobile 전용 select 트리거 : 현재 선택된 항목명을 표시하고, 클릭 시 아래 <ul>을 펼친다(PC에서는 CSS로 숨김) -->
+    <button type="button" class="navSelect" data-nav-select-trigger aria-expanded="false" aria-controls="navSelectList">
+        <span>Contents Title</span>
+        <span class="ico"></span>
+    </button>
+
+    <ul id="navSelectList">
+        <li><a href="#section1"><span class="navItemText">Contents Title</span><span class="navStatus"></span></a></li>
+        <li><a href="#section2"><span class="navItemText">Contents Title</span><span class="navStatus -done"></span></a></li>
+        <li><a href="#section3"><span class="navItemText">Contents Title</span><span class="navStatus"></span></a></li>
+        <li class="on"><a href="#section4" aria-current="page"><span class="navItemText">Contents Title</span><span class="navStatus -done"></span></a></li>
+        <li><a href="#section5"><span class="navItemText">Contents Title</span><span class="navStatus"></span></a></li>
+        <li><a href="#section6"><span class="navItemText">Contents Title</span><span class="navStatus"></span></a></li>
+        <li><a href="#section7"><span class="navItemText">Contents Title</span><span class="navStatus"></span></a></li>
+        <li><a href="#section8"><span class="navItemText">Contents Title</span><span class="navStatus"></span></a></li>
+    </ul>
+    <div class="navFoot">
+        <button class="btn tertiary small" type="button">버튼</button>
+        <button class="btn primary small" type="button">버튼</button>
+        <p>부가적인 설명을 표시합니다.</p>
+    </div>
+</div>
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+
+</div>
+</div>
+
+
+<script>
+    run();
+</script>

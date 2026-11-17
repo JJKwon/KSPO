@@ -1,0 +1,144 @@
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Select</div>
+<div class="guideCont">
+<div class="gText">
+    - 목록에서 하나를 선택할 때 사용되는 셀렉트박스입니다. (Large 사이즈, Default/Focused/Completed/Error/Disabled/View 상태)
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<div class="cptForm">
+
+    <!-- 셀렉트 : State = Default (포커스시 -info 메시지 노출)
+         label 에 for, select 에 id 로 명시적 연결. hint 는 aria-describedby 로 연결 -->
+    <div class="iptSelect -large">
+        <label for="selectLarge1">레이블</label>
+        <p class="hint" id="selectLarge1Hint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <select id="selectLarge1" aria-describedby="selectLarge1Hint">
+                <option value="" disabled selected>선택해주세요.</option>
+                <option value="1">옵션 1</option>
+                <option value="2">옵션 2</option>
+            </select>
+            <span class="ico"></span>
+        </div>
+        <p class="msg -info"><span class="ico"></span>메시지를 입력해 주세요</p>
+    </div>
+
+    <br>
+
+    <!-- 셀렉트 : State = Focused (실제 클릭 포커스 없이도 가이드에서 바로 보이도록 -focused 클래스 사용) -->
+    <div class="iptSelect -large -focused">
+        <label for="selectLargeFocus">레이블</label>
+        <p class="hint" id="selectLargeFocusHint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <select id="selectLargeFocus" aria-describedby="selectLargeFocusHint">
+                <option value="" disabled selected>선택해주세요.</option>
+                <option value="1">옵션 1</option>
+            </select>
+            <span class="ico"></span>
+        </div>
+        <p class="msg -info"><span class="ico"></span>메시지를 입력해 주세요</p>
+    </div>
+
+    <br>
+
+    <!-- 셀렉트 : State = Completed -->
+    <div class="iptSelect -large -completed">
+        <label for="selectLarge2">레이블</label>
+        <p class="hint" id="selectLarge2Hint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <select id="selectLarge2" aria-describedby="selectLarge2Hint">
+                <option value="1" selected>옵션 1</option>
+                <option value="2">옵션 2</option>
+            </select>
+            <span class="ico"></span>
+        </div>
+        <p class="msg -success"><span class="ico"></span>메시지를 입력해 주세요</p>
+    </div>
+
+    <br>
+
+    <!-- 셀렉트 : State = Error -->
+    <div class="iptSelect -large -error">
+        <label for="selectLarge3">레이블</label>
+        <p class="hint" id="selectLarge3Hint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <select id="selectLarge3" aria-describedby="selectLarge3Hint" aria-invalid="true">
+                <option value="" disabled selected>선택해주세요.</option>
+                <option value="1">옵션 1</option>
+            </select>
+            <span class="ico"></span>
+        </div>
+        <p class="msg -error"><span class="ico"></span>메시지를 입력해 주세요</p>
+    </div>
+
+    <br>
+
+    <!-- 셀렉트 : State = Disabled -->
+    <div class="iptSelect -large -disabled">
+        <label for="selectLarge4">레이블</label>
+        <p class="hint" id="selectLarge4Hint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <select id="selectLarge4" aria-describedby="selectLarge4Hint" disabled>
+                <option value="" disabled selected>선택해주세요.</option>
+            </select>
+            <span class="ico"></span>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- 셀렉트 : State = View (읽기 전용으로 값만 보여줄 때) -->
+    <div class="iptSelect -large -view">
+        <label for="selectLarge5">레이블</label>
+        <p class="hint" id="selectLarge5Hint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <select id="selectLarge5" aria-describedby="selectLarge5Hint" disabled>
+                <option value="1" selected>옵션 1</option>
+                <option value="2">옵션 2</option>
+            </select>
+            <span class="ico"></span>
+        </div>
+    </div>
+
+</div>
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+
+</div>
+</div>
+
+
+<script>
+    run();
+</script>
+

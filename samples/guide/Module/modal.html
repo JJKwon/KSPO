@@ -1,0 +1,153 @@
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Modal</div>
+<div class="guideCont">
+<div class="gText">
+    - 버튼을 누르면 dim(반투명 배경) 뒤에 레이어팝업이 열립니다. dim, 닫기 버튼, ESC 키로 닫을 수 있습니다. (Small/Medium 2가지 사이즈) * dim은 별도 디자인이 없어 임의로 제작함<br>
+    - "오늘 하루 보지 않기"를 체크하고 닫으면 localStorage에 오늘 날짜로 기록되어, 같은 날에는 data-modal-open 버튼을 눌러도 다시 열리지 않습니다. (Small 모달 예시)<br>
+    - 본문이 길어 스크롤이 생기면 화살표 없이 트랙(회색 배경)과 썸(진한 회색 막대)만 있는 전용 스크롤바가 나타납니다. (Medium 모달 예시)
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<!-- 모달 : Size = Small 여는 버튼 -->
+<button class="btn primary large" type="button" data-modal-open="modalSample">모달 열기 (Small)</button>
+
+<!-- 모달 : Size = Small -->
+<div class="modModal -small" id="modalSample">
+    <div class="modalDim" data-modal-close></div>
+    <div class="modalPanel" role="dialog" aria-modal="true">
+        <div class="modalHead">
+            <button type="button" class="modalClose" data-modal-close></button>
+        </div>
+        <div class="modalBodyWrap" data-modal-scroll-wrap>
+            <div class="modalBody">
+                <p class="modalTitle">모달 Small</p>
+                <p class="modalText">대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.</p>
+            </div>
+        </div>
+        <div class="modalFoot">
+            <!-- data-modal-today : 체크 시 오늘 하루 이 모달을 다시 열지 않는다 (localStorage, common.js) -->
+            <label class="modalToday">
+                <input type="checkbox" data-modal-today>
+                <span class="todayMark"></span>
+                <span>오늘 하루 보지 않기</span>
+            </label>
+            <div class="modalButtons">
+                <button class="btn tertiary medium" type="button" data-modal-close>취소</button>
+                <button class="btn secondary medium" type="button">임시저장</button>
+                <button class="btn primary medium" type="button">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<!-- 모달 : Size = Medium 여는 버튼 -->
+<button class="btn primary large" type="button" data-modal-open="modalSampleMd">모달 열기 (Medium)</button>
+
+<!-- 모달 : Size = Medium (내용이 길어 스크롤 + 전용 스크롤바가 나타나는 예시) -->
+<div class="modModal -medium" id="modalSampleMd">
+    <div class="modalDim" data-modal-close></div>
+    <div class="modalPanel" role="dialog" aria-modal="true">
+        <div class="modalHead">
+            <button type="button" class="modalClose" data-modal-close></button>
+        </div>
+        <div class="modalBodyWrap" data-modal-scroll-wrap>
+            <div class="modalBody">
+                <p class="modalTitle">모달 Medium</p>
+                <p class="modalText">대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.</p>
+                <p class="modalText">대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.</p>
+                <p class="modalText">대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.</p>
+                <p class="modalText">대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.</p>
+                <p class="modalText">대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다.</p>
+            </div>
+        </div>
+        <div class="modalFoot">
+            <div class="modalButtons">
+                <button class="btn tertiary medium" type="button" data-modal-close>취소</button>
+                <button class="btn secondary medium" type="button">임시저장</button>
+                <button class="btn primary medium" type="button">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</textarea>
+</div>
+</div>
+
+<!-- 케이스 : 반려 사유(정보 확인용) 모달 - 취소/확인 2버튼(Figma node-id 2956-48495 실측).
+     data-modal-open 버튼(우측 작성항목 하단 "반려 사유" 등)에서 열리며, 본문은 실제 반려 사유 문구로 채운다.
+     두 버튼 모두 data-modal-close라 동작 차이는 없고(읽기 전용 안내라 별도 확정 액션이 없음), 취소/확인 배치만 디자인을 따른다. -->
+<div class="gGroup">
+<div class="gText">
+    - 반려 사유처럼 "읽기만 하는" 안내 모달도 디자인상 취소/확인 2버튼으로 나올 수 있다. 실제 화면 예시는 detail_reject.html의 "반려 사유" 모달 참고.
+</div>
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<!-- 모달 : 반려 사유(취소/확인 2버튼) 여는 버튼 -->
+<button class="btn error medium" type="button" data-modal-open="modalRejectSample"><span class="ico -exclamation"></span>반려 사유</button>
+
+<!-- 모달 : Size = Medium, 취소/확인 2버튼 -->
+<div class="modModal -medium" id="modalRejectSample">
+    <div class="modalDim" data-modal-close></div>
+    <div class="modalPanel" role="dialog" aria-modal="true">
+        <div class="modalHead">
+            <button type="button" class="modalClose" data-modal-close></button>
+        </div>
+        <div class="modalBodyWrap" data-modal-scroll-wrap>
+            <div class="modalBody">
+                <p class="modalTitle">반려 사유</p>
+                <p class="modalText">첨부하신 사업계획서 파일이 최신 교부 신청 서식과 일치하지 않습니다. 최신 서식으로 사업계획서를 다시 첨부하여 재제출해 주세요.</p>
+            </div>
+        </div>
+        <div class="modalFoot">
+            <div class="modalButtons">
+                <button class="btn tertiary medium" type="button" data-modal-close>취소</button>
+                <button class="btn primary medium" type="button" data-modal-close>확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+
+</div>
+</div>
+
+
+<script>
+    run();
+</script>

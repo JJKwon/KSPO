@@ -1,0 +1,253 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" >
+	<meta name="format-detection" content="telephone=no">
+	<meta name="description" content="국민체육진흥공단 기금평가시스템">
+	<meta name="keywords" content="국민체육진흥공단, 기금평가, 기금평가시스템, KSPO">
+	<meta name="author" content="국민체육진흥공단">
+	<meta property="og:title" content="공지사항 상세 - 공지사항 | 기금평가시스템">
+	<meta property="og:description" content="국민체육진흥공단 기금평가시스템">
+	<meta property="og:image" content="../../images/common/logo_header.svg">
+	<meta property="og:url" content="">
+	<!-- 캐싱방지 -->
+	<!-- <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT"> -->
+	<!-- 모바일 상단,타이틀바,주소창 색변경(안드로이드에서 크롬,파폭,오페라,삼성브라우저만 가능) -->
+	<!-- <meta name="theme-color" content="#4285f4"> -->
+
+	<title>공지사항 상세 - 공지사항 | 기금평가시스템</title>
+
+	<link rel="stylesheet" href="../../common/css/swiper.css" />
+	<link rel="stylesheet" href="../../common/css/style.css" />
+	<!-- @퍼블(2026-09-15 추가) : locals.extraHead로 페이지별 전용 <head> 내용(웹폰트 등)을 선택적으로 추가할 수 있다 -
+	     다른 페이지의 <head>에는 영향 없다. 사용례 : applicant/material/detail02.html, applicant/survey/detail02.html
+	     (개인정보동의 "(주관) 성명" 실시간 서명 미리보기용 손글씨 웹폰트 Gaegu 로드 - 20261026 Nanum Brush Script로 잠시 교체했다가 다시 Gaegu로 확정). -->
+	
+
+	<script src="../../common/js/swiper.js" defer></script>
+	<script src="../../common/js/common.js" defer></script>
+</head>
+<body>
+<div class="skip"><a class="quickBtn" href="#container">본문바로가기</a></div>
+<div class="wrap">
+
+<!-- 레이아웃 -->
+<div class="lytLayout">
+    <div class="layoutArea">
+
+        <!-- 상단영역 -->
+        <div class="layoutTop">
+            <!-- Top -->
+            
+
+<!-- @퍼블 : 반응형(Mobile) 적용(2026-08-19, 2026-09-10 .hdMobileMenu 전면 교체, 2026-09-15 헤더 바 뱃지 위치 수정).
+     헤더 바(로고+뱃지+햄버거)는 Figma node-id 2207-4601 실측 기준이나, 뱃지(.hdUser)를 로고-햄버거 사이 3번째
+     space-between 항목으로 따로 두면 화면이 넓어질수록 뱃지가 중앙 쪽으로 떠 보이는 문제가 있어(node-id 3264-29754
+     피드백) 뱃지를 햄버거 버튼과 한 그룹(.hdUtil)으로 묶었다 - 그룹째로 항상 오른쪽(햄버거 옆)에 붙어 있어야 한다.
+     햄버거를 눌러서 열리는 패널(.hdMobileMenu)은 처음엔 실제 목업이 없어 추측으로 구성했었는데, 이번에 Figma
+     node-id 3219-49445(Mo_메뉴_OPEN)로 새로 나와 전체 재작업했다 - 화면 전체를 덮어야 해서 position:fixed·height:100%로
+     처리했고(패널 자체가 새 화면처럼 동작), 상단(로고+뱃지+닫기)/이용자정보·로그아웃(오른쪽 정렬)/메뉴 목록 3단 구성.
+     상단 뱃지+닫기버튼도 헤더 바와 동일하게 한 그룹(.mobMenuTrigger)으로 묶어서, 메뉴를 열고 닫을 때 뱃지의 X좌표가
+     그대로 유지되도록 한다(아래 mobMenuTop 참고). 메뉴 항목(평가사업/공지사항/나의정보관리)은 depth 없이 누르면 바로 이동하는
+     구조인데 실제 이동 경로가 보조사업자/평가위원 회원유형에 따라 달라져 href는 비워둔다(#) - 실제 연동 시 회원유형별
+     분기 필요. "나의정보관리"(Figma 3220:51272)는 2026.09.30 요청으로 PC GNB·모바일 메뉴 양쪽에 추가했다(연결 링크 미정 → #). 열고 닫는 동작은 기존 .comTooltip과 동일한 패턴(트리거 클릭 시 open 토글, 바깥
+     클릭 시 닫힘)으로 common.js에 구현되어 있고, 패널 안의 닫기(X) 버튼도 같은 [data-menu-trigger]를 재사용해 별도
+     JS 수정 없이 동작한다. -->
+<header class="cptHeader">
+    <div class="hdInner">
+        <h1 class="hdLogo">
+            <a href="../../html/index.html">
+                <img src="../../images/common/logo_header.svg" alt="KSPO">
+            </a>
+        </h1>
+
+        <nav class="hdGnb">
+            <ul>
+                <li><a href="../../html/applicant/business/list.html">평가사업</a></li>
+                <li class="on"><a href="../../html/board/list.html" aria-current="page">공지사항</a></li>
+                <li><a href="#">나의정보관리</a></li><!--2026.09.30 추가 : 연결 링크 미정(#)-->
+            </ul>
+        </nav>
+
+        <div class="hdUtil">
+            <div class="hdUser">
+                <span class="hdBadge">보조사업자</span>
+                <span class="hdBadge">평가위원</span>
+                <span class="hdInfo"><i class="ico -myinfo"></i>대한축구협회 (홍길동)</span>
+            </div>
+            <a href="#" class="hdLogout"><i class="ico -logout"></i>로그아웃</a>
+            <button type="button" class="hdMenuBtn" data-menu-trigger aria-expanded="false" aria-controls="hdMobileMenu"><i class="ico -menu"></i><span class="hide">전체메뉴 열기</span></button>
+        </div>
+    </div>
+
+    <div class="hdMobileMenu" id="hdMobileMenu" role="dialog" aria-modal="true" aria-label="전체메뉴">
+        <div class="mobMenuTop">
+            <h1 class="hdLogo">
+                <a href="../../html/index.html">
+                    <img src="../../images/common/logo_header.svg" alt="KSPO">
+                </a>
+            </h1>
+
+            <div class="mobMenuTrigger">
+                <div class="hdUser">
+                    <span class="hdBadge">보조사업자</span>
+                    <span class="hdBadge">평가위원</span>
+                </div>
+
+                <button type="button" class="mobMenuCloseBtn" data-menu-trigger aria-controls="hdMobileMenu"><i class="ico -close"></i><span class="hide">전체메뉴 닫기</span></button>
+            </div>
+        </div>
+
+        <div class="hdMobileUtil">
+            <span class="hdInfo"><i class="ico -myinfo"></i>대한축구협회 (홍길동)</span>
+            <a href="#" class="hdLogout"><i class="ico -logout"></i>로그아웃</a>
+        </div>
+
+        <div class="mobMenuBody">
+            <nav class="hdMobileGnb">
+                <ul>
+                    <li><a href="#">평가사업<i class="ico -arrow"></i></a></li>
+                    <li><a href="#" aria-current="page">공지사항<i class="ico -arrow"></i></a></li>
+                    <li><a href="#">나의정보관리<i class="ico -arrow"></i></a></li><!--2026.09.30 추가 : 연결 링크 미정(#)-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+        </div>
+        <!-- //상단영역 -->
+
+        <!-- 중단영역 -->
+        <div class="layoutContainer" id="container">
+
+            <!-- 메인 콘텐츠 영역 -->
+            <main class="layoutMaincont">
+                <!-- 컨텐츠 소스 시작 위치 -->
+
+                <div class="cptBoardView">
+                    <div class="comBreadCrumb -left">
+                        <ul>
+                            <li><i class="ico -home"></i><a href="../index.html">홈</a></li>
+                            <li><i class="ico -arrow"></i><a href="list.html">공지사항</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="comPageTitle">
+                        <h2>공지사항</h2>
+                    </div>
+
+                    <div class="boardHead">
+                        <p class="boardTitle">[교육] 만족도 조사 계획서</p>
+                        <div class="boardMeta">
+                            <span>구분 : 평가위원</span>
+                            <span class="divider"></span>
+                            <span>등록일자 : 2026-08-07</span>
+                        </div>
+                    </div>
+
+                    <div class="boardBody">
+                        <p class="boardText">차세대 부동산종합공부시스템 전환 작업으로
+아래와 같이 일부지역 서비스가 일시 중단되오니 양해해주시기 바랍니다.
+
+○ 중단대상: 부동산종합공부시스템, 민원발급 연계(정부24, 무인민원발급기)
+○ 중단일시: '2026. 8. 7.(금) ~ '2026. 8. 10.(월)  /  2026.12.28 까지 매주 (금) 18:00 ~ (월) 09:00
+○ 대상지역 및 중단업무
+
+    1) 대상시군구: 부산광역시(중구, 영도구, 동래구, 남구, 북구, 해운대구, 금정구)
+                       경기도(고양시(덕양구, 일산동구, 일산서구))
+        중단업무: 인터넷민원* 및 행정·창구민원** 등 서비스 중단
+
+    2) 전환시군구: 79개 시군구(1~19차 대상)  첨부파일 참조
+        중단업무: 행정·창구민원** 등 서비스 중단
+
+   * 토지(임야)대장, 대지권등록부, 지적(임야)도, 경계점좌표등록부, 토지이용계획확인서, 부동산종합증명서(종합형, 맞춤형) 열람·발급 서비스
+   ** 지적행정(토지이동, 소유권변동 등), 창구발급(타 시군구 발급포함), 표준연계 API
+    ※ 전체 기간의 대상 지역은 230개 시·군·구로 자세한 중단 일정은 첨부파일 참조
+
+○ 문의사항: 차세대 부동산종합공부시스템 사업단(070-4416-4713)
+
+※ 작업진행 상황에 따라 중단시간은 변경 될 수 있습니다.</p>
+                        <!-- @퍼블 : Figma node-id 3015-74610 실측 - 링크가 회색 기본색이 아니라 파란색(primary)+상시 밑줄. -primary 추가. -->
+                        <div class="comTextButton -medium -primary">
+                            <a href="#" target="_blank" rel="noopener" title="새창">현장평가단 강의 보러가기<span class="ico -newWindow"></span></a>
+                        </div>
+                    </div>
+
+                    <div class="boardFiles">
+                        <strong class="boardFilesTitle" id="boardFilesTitle">첨부파일</strong>
+                        <div class="cptForm">
+                            <div class="formUpload">
+                                <ul class="uploadList" aria-labelledby="boardFilesTitle">
+                                    <li class="uploadItem">
+                                        <p class="fileName">파일명을 입력해주세요. [확장자명,파일용량]</p>
+                                        <div class="actions">
+                                            <button type="button" class="-download">다운로드<span class="ico"></span></button>
+                                            <!-- <button type="button" class="-view">바로보기<span class="ico"></span></button> --><!--2026.10.08 명칭변경-->
+                                        </div>
+                                    </li>
+                                    <li class="uploadItem">
+                                        <p class="fileName">파일명을 입력해주세요. [확장자명,파일용량]</p>
+                                        <div class="actions">
+                                            <button type="button" class="-download">다운로드<span class="ico"></span></button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="boardButtons">
+                        <a class="btn tertiary large" href="list.html">목록</a>
+                    </div>
+                </div>
+
+                <!-- 컨텐츠 소스 마지막 위치 -->
+            </main>
+            <!-- //메인 콘텐츠 영역 -->
+
+        </div>
+        <!-- //중단영역 -->
+
+        <!-- 하단영역 -->
+        <div class="layoutBottom">
+            <!-- Bottom -->
+            
+
+<footer class="cptFooter">
+    <div class="ftInner">
+        <div class="ftTop">
+            <!-- (2026-10-21 사용자 지시, Figma node-id 2974-71847) 구조 변경 : 로고 왼쪽 / 주소·TEL·FAX 오른쪽(기존과 반대). Mobile은 로고 위, 주소 아래 -->
+            <img class="ftLogo" src="../../images/common/logo_footer.svg" alt="국민체육진흥공단">
+            <div class="ftAddr">
+                <p>05540 서울시 송파구 올림픽로 424 올림픽회관</p>
+                <p>TEL : 02-410-1114</p>
+                <p>FAX : 02-410-1219</p>
+            </div>
+        </div>
+
+        <div class="ftBottom">
+            <div class="ftPolicy">
+                <a href="#" class="-strong">개인정보처리방침</a>
+                <a href="#">홈페이지저작권정책</a>
+                <a href="#">전화번호안내</a>
+                <a href="#">위치안내</a>
+            </div>
+            <p class="ftCopy">COPYRIGHT © 2026 국민체육진흥공단. ALL RIGHT RESERVED.</p>
+        </div>
+    </div>
+</footer>
+        </div>
+        <!-- //하단영역 -->
+    </div>
+</div>
+
+
+<!-- Bottom -->
+
+</div>
+</body>
+</html>

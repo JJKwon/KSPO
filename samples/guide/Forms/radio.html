@@ -1,0 +1,126 @@
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Radio</div>
+<div class="guideCont">
+<div class="gText">
+    - 여러 옵션 중 하나만 선택할 때 사용됩니다. (Large/Medium 2가지 사이즈, Default/Selected/Disabled/Selected+Disabled 상태)
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<!-- cptForm : 이 페이지 전체를 감싸는 최상위 셸 클래스 -->
+<div class="cptForm">
+
+    <!-- 라디오 버튼 : Size = Large
+         label 은 input + 시각 마크 + 핵심 레이블 텍스트만 감싼다.
+         부가설명은 label 밖으로 분리하고 aria-describedby로만 연결한다
+         (label 안에 부가설명까지 넣으면 스크린리더가 이를 한 덩어리로 읽고,
+          설명 텍스트를 눌러도 라디오가 선택되어버려 접근성 표준에 맞지 않는다) -->
+    <div class="iptRdo -large">
+        <label>
+            <input type="radio" name="radioLarge" id="radioLarge1" aria-describedby="radioLarge1Help" checked>
+            <span class="radioMark"></span>
+            <span class="radioLabel">라디오 버튼</span>
+        </label>
+        <p class="radioHelp" id="radioLarge1Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptRdo -large">
+        <label>
+            <input type="radio" name="radioLarge" id="radioLarge2" aria-describedby="radioLarge2Help">
+            <span class="radioMark"></span>
+            <span class="radioLabel">라디오 버튼</span>
+        </label>
+        <p class="radioHelp" id="radioLarge2Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptRdo -large">
+        <label>
+            <input type="radio" name="radioLarge" id="radioLarge3" aria-describedby="radioLarge3Help" disabled>
+            <span class="radioMark"></span>
+            <span class="radioLabel">라디오 버튼</span>
+        </label>
+        <p class="radioHelp" id="radioLarge3Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptRdo -large">
+        <label>
+            <input type="radio" name="radioLargeDisabledChecked" id="radioLarge4" aria-describedby="radioLarge4Help" checked disabled>
+            <span class="radioMark"></span>
+            <span class="radioLabel">라디오 버튼</span>
+        </label>
+        <p class="radioHelp" id="radioLarge4Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+
+    <br><br>
+
+    <!-- 라디오 버튼 : Size = Medium -->
+    <div class="iptRdo -medium">
+        <label>
+            <input type="radio" name="radioMedium" id="radioMedium1" aria-describedby="radioMedium1Help">
+            <span class="radioMark"></span>
+            <span class="radioLabel">라디오 버튼</span>
+        </label>
+        <p class="radioHelp" id="radioMedium1Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptRdo -medium">
+        <label>
+            <input type="radio" name="radioMedium" id="radioMedium2" aria-describedby="radioMedium2Help" checked>
+            <span class="radioMark"></span>
+            <span class="radioLabel">라디오 버튼</span>
+        </label>
+        <p class="radioHelp" id="radioMedium2Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptRdo -medium">
+        <label>
+            <input type="radio" name="radioMedium" id="radioMedium3" aria-describedby="radioMedium3Help" disabled>
+            <span class="radioMark"></span>
+            <span class="radioLabel">라디오 버튼</span>
+        </label>
+        <p class="radioHelp" id="radioMedium3Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+    <div class="iptRdo -medium">
+        <label>
+            <input type="radio" name="radioMediumDisabledChecked" id="radioMedium4" aria-describedby="radioMedium4Help" checked disabled>
+            <span class="radioMark"></span>
+            <span class="radioLabel">라디오 버튼</span>
+        </label>
+        <p class="radioHelp" id="radioMedium4Help">부가적인 설명이 들어갑니다.</p>
+    </div>
+
+</div>
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+
+</div>
+</div>
+
+
+<script>
+    run();
+</script>
+

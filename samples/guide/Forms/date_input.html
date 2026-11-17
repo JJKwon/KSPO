@@ -1,0 +1,259 @@
+<style>
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.guideBox {margin-top:40px;}
+.guideTitle {font-size:18px; font-weight:500;}
+.guideCont {margin-top:10px;}
+.gGroup {margin-top:20px;}
+.gText {font-size:14px;}
+.gView {padding:10px; border:1px solid #bbbbbb; background:#fff;}
+</style>
+
+<div class="cptPubGuide">
+<div class="guideArea">
+
+<!-- 가이드 그룹 -->
+<div class="guideBox">
+<div class="guideTitle">Date Input</div>
+<div class="guideCont">
+<div class="gText">
+    - 날짜를 입력할 때 사용됩니다. (Large 사이즈, Default/Focused/Completed/Error/Disabled/View 상태)<br>
+    - Default/Focused/Completed/Error는 common/comCalendar(팝오버 달력, common.js)를 그대로 붙여 놓았습니다. 인풋을 포커스/클릭하면 달력이 열리고, 날짜를 골라 "확인"을 누르면 그 값이 인풋에 채워집니다(YYYY-MM-DD). Completed처럼 인풋에 이미 값이 있으면 달력을 열 때 그 날짜가 자동으로 선택된 상태로 시작합니다. Disabled/View는 상호작용이 없는 상태라 달력을 붙이지 않았습니다.
+</div>
+<div class="gGroup">
+<div class="gView"></div>
+<div class="gCode">
+<pre><code class="xml" style="font-size:14px; letter-spacing:1.5px; font-family: 'D2Coding'"></code></pre>
+<textarea class="codeGuide" style="display:none;">
+
+<div class="cptForm">
+
+    <!-- 날짜 입력 : State = Default
+         data-cal-field로 인풋(.iptDate)과 .comCalendar(달력 팝오버)를 함께 묶는다.
+         인풋을 포커스/클릭 -> 달력이 열림 / 날짜 선택 후 확인 -> 인풋에 값이 채워지고 닫힘 / 취소 -> 값 변경 없이 닫힘. (common.js) -->
+    <div class="calField" data-cal-field>
+        <div class="iptDate -large">
+            <label for="dateLarge1">레이블</label>
+            <p class="hint" id="dateLarge1Hint">입력시 필요한 정보를 입력해 주세요</p>
+            <div class="box">
+                <input type="text" id="dateLarge1" aria-describedby="dateLarge1Hint" placeholder="YYYY-MM-DD" readonly data-cal-input data-cal-open>
+                <span class="ico" data-cal-open></span>
+            </div>
+            <p class="msg -info"><span class="ico"></span>메시지를 입력해 주세요</p>
+        </div>
+
+        <div class="comCalendar" data-cal-init>
+            <div class="calHead">
+                <button type="button" class="calNavBtn -prev" aria-label="이전 달" data-cal-prev><span class="ico"></span></button>
+                <div class="calTitle">
+                    <div class="calSelect" data-cal-select="year">
+                        <button type="button" class="calSelectBtn" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="txt">2026년</span><span class="ico"></span>
+                        </button>
+                        <ul class="calSelectList" role="listbox"></ul>
+                    </div>
+                    <div class="calSelect" data-cal-select="month">
+                        <button type="button" class="calSelectBtn" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="txt">1월</span><span class="ico"></span>
+                        </button>
+                        <ul class="calSelectList" role="listbox"></ul>
+                    </div>
+                </div>
+                <button type="button" class="calNavBtn -next" aria-label="다음 달" data-cal-next><span class="ico"></span></button>
+            </div>
+            <div class="calBody" data-cal-body></div>
+            <div class="calFoot">
+                <button type="button" class="calTodayBtn" data-cal-today><span class="dot"></span><span class="txt">오늘</span></button>
+                <div class="calBtnSet">
+                    <button type="button" class="btn tertiary medium" data-cal-cancel>취소</button>
+                    <button type="button" class="btn primary medium" data-cal-confirm>확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- 날짜 입력 : State = Focused (레이아웃 확인용으로 -focused 클래스를 얹어 항상 포커스 모양으로 보이지만,
+         실제로 포커스/클릭하면 Default와 동일하게 달력이 열린다) -->
+    <div class="calField" data-cal-field>
+        <div class="iptDate -large -focused">
+            <label for="dateLargeFocus">레이블</label>
+            <p class="hint" id="dateLargeFocusHint">입력시 필요한 정보를 입력해 주세요</p>
+            <div class="box">
+                <input type="text" id="dateLargeFocus" aria-describedby="dateLargeFocusHint" placeholder="YYYY-MM-DD" readonly data-cal-input data-cal-open>
+                <span class="ico" data-cal-open></span>
+            </div>
+            <p class="msg -info"><span class="ico"></span>메시지를 입력해 주세요</p>
+        </div>
+
+        <div class="comCalendar" data-cal-init>
+            <div class="calHead">
+                <button type="button" class="calNavBtn -prev" aria-label="이전 달" data-cal-prev><span class="ico"></span></button>
+                <div class="calTitle">
+                    <div class="calSelect" data-cal-select="year">
+                        <button type="button" class="calSelectBtn" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="txt">2026년</span><span class="ico"></span>
+                        </button>
+                        <ul class="calSelectList" role="listbox"></ul>
+                    </div>
+                    <div class="calSelect" data-cal-select="month">
+                        <button type="button" class="calSelectBtn" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="txt">1월</span><span class="ico"></span>
+                        </button>
+                        <ul class="calSelectList" role="listbox"></ul>
+                    </div>
+                </div>
+                <button type="button" class="calNavBtn -next" aria-label="다음 달" data-cal-next><span class="ico"></span></button>
+            </div>
+            <div class="calBody" data-cal-body></div>
+            <div class="calFoot">
+                <button type="button" class="calTodayBtn" data-cal-today><span class="dot"></span><span class="txt">오늘</span></button>
+                <div class="calBtnSet">
+                    <button type="button" class="btn tertiary medium" data-cal-cancel>취소</button>
+                    <button type="button" class="btn primary medium" data-cal-confirm>확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- 날짜 입력 : State = Completed (인풋에 이미 값이 있으므로, 달력을 열면 common.js가 그 값을 읽어
+         해당 날짜를 자동으로 선택해 둔 채로 시작한다) -->
+    <div class="calField" data-cal-field>
+        <div class="iptDate -large -completed">
+            <label for="dateLargeCompleted">레이블</label>
+            <p class="hint" id="dateLargeCompletedHint">입력시 필요한 정보를 입력해 주세요</p>
+            <div class="box">
+                <input type="text" id="dateLargeCompleted" aria-describedby="dateLargeCompletedHint" value="2026-08-13" readonly data-cal-input data-cal-open>
+                <span class="ico" data-cal-open></span>
+            </div>
+            <p class="msg -success"><span class="ico"></span>메시지를 입력해 주세요</p>
+        </div>
+
+        <div class="comCalendar" data-cal-init>
+            <div class="calHead">
+                <button type="button" class="calNavBtn -prev" aria-label="이전 달" data-cal-prev><span class="ico"></span></button>
+                <div class="calTitle">
+                    <div class="calSelect" data-cal-select="year">
+                        <button type="button" class="calSelectBtn" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="txt">2026년</span><span class="ico"></span>
+                        </button>
+                        <ul class="calSelectList" role="listbox"></ul>
+                    </div>
+                    <div class="calSelect" data-cal-select="month">
+                        <button type="button" class="calSelectBtn" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="txt">1월</span><span class="ico"></span>
+                        </button>
+                        <ul class="calSelectList" role="listbox"></ul>
+                    </div>
+                </div>
+                <button type="button" class="calNavBtn -next" aria-label="다음 달" data-cal-next><span class="ico"></span></button>
+            </div>
+            <div class="calBody" data-cal-body></div>
+            <div class="calFoot">
+                <button type="button" class="calTodayBtn" data-cal-today><span class="dot"></span><span class="txt">오늘</span></button>
+                <div class="calBtnSet">
+                    <button type="button" class="btn tertiary medium" data-cal-cancel>취소</button>
+                    <button type="button" class="btn primary medium" data-cal-confirm>확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- 날짜 입력 : State = Error (에러 상태도 실제로는 사용자가 다시 눌러 고쳐야 하므로 달력을 그대로 붙인다) -->
+    <div class="calField" data-cal-field>
+        <div class="iptDate -large -error">
+            <label for="dateLarge2">레이블</label>
+            <p class="hint" id="dateLarge2Hint">입력시 필요한 정보를 입력해 주세요</p>
+            <div class="box">
+                <input type="text" id="dateLarge2" aria-describedby="dateLarge2Hint" aria-invalid="true" placeholder="YYYY-MM-DD" readonly data-cal-input data-cal-open>
+                <span class="ico" data-cal-open></span>
+            </div>
+            <p class="msg -error"><span class="ico"></span>메시지를 입력해 주세요</p>
+        </div>
+
+        <div class="comCalendar" data-cal-init>
+            <div class="calHead">
+                <button type="button" class="calNavBtn -prev" aria-label="이전 달" data-cal-prev><span class="ico"></span></button>
+                <div class="calTitle">
+                    <div class="calSelect" data-cal-select="year">
+                        <button type="button" class="calSelectBtn" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="txt">2026년</span><span class="ico"></span>
+                        </button>
+                        <ul class="calSelectList" role="listbox"></ul>
+                    </div>
+                    <div class="calSelect" data-cal-select="month">
+                        <button type="button" class="calSelectBtn" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="txt">1월</span><span class="ico"></span>
+                        </button>
+                        <ul class="calSelectList" role="listbox"></ul>
+                    </div>
+                </div>
+                <button type="button" class="calNavBtn -next" aria-label="다음 달" data-cal-next><span class="ico"></span></button>
+            </div>
+            <div class="calBody" data-cal-body></div>
+            <div class="calFoot">
+                <button type="button" class="calTodayBtn" data-cal-today><span class="dot"></span><span class="txt">오늘</span></button>
+                <div class="calBtnSet">
+                    <button type="button" class="btn tertiary medium" data-cal-cancel>취소</button>
+                    <button type="button" class="btn primary medium" data-cal-confirm>확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- 날짜 입력 : State = Disabled -->
+    <div class="iptDate -large -disabled">
+        <label for="dateLarge3">레이블</label>
+        <p class="hint" id="dateLarge3Hint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <input type="text" id="dateLarge3" aria-describedby="dateLarge3Hint" placeholder="YYYY-MM-DD" disabled>
+            <span class="ico"></span>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- 날짜 입력 : State = View (읽기 전용으로 값만 보여줄 때) -->
+    <div class="iptDate -large -view">
+        <label for="dateLarge4">레이블</label>
+        <p class="hint" id="dateLarge4Hint">입력시 필요한 정보를 입력해 주세요</p>
+        <div class="box">
+            <input type="text" id="dateLarge4" aria-describedby="dateLarge4Hint" value="2026-08-13" readonly>
+            <span class="ico"></span>
+        </div>
+    </div>
+
+</div>
+
+</textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- //가이드 그룹 -->
+
+
+</div>
+</div>
+
+
+<script>
+    run();
+
+    // guide.html이 이 페이지를 jQuery.load()로 나중에 끼워 넣기 때문에(common.js는 그 전에 이미 실행이
+    // 끝난 상태) common.js의 자동 초기화 루프가 이 안의 .comCalendar를 못 잡는다. run()과 같은 방식으로
+    // 여기서 직접 한 번 더 불러서 실제 tui.DatePicker 인스턴스를 만든다.
+    document.querySelectorAll('.cptPubGuide [data-cal-init]').forEach(window.initComCalendar);
+</script>
+
